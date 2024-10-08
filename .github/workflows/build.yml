@@ -42,7 +42,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         continue-on-error: true
@@ -100,7 +103,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         continue-on-error: true
@@ -159,7 +165,10 @@ jobs:
       - name: Clone
         id: checkout
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         run: |
@@ -194,7 +203,10 @@ jobs:
       - name: Clone
         id: checkout
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         run: |
@@ -218,7 +230,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         run: |
@@ -291,7 +306,10 @@ jobs:
       - name: Clone
         id: checkout
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         run: |
@@ -331,7 +349,10 @@ jobs:
       - name: Clone
         id: checkout
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         run: |
@@ -359,7 +380,10 @@ jobs:
       - name: Clone
         id: checkout
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         run: |
@@ -384,7 +408,10 @@ jobs:
       - name: Clone
         id: checkout
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         run: |
@@ -410,7 +437,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: add oneAPI to apt
         shell: bash
         run: |
@@ -619,7 +649,10 @@ jobs:
       - name: Clone
         id: checkout
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         continue-on-error: true
@@ -649,7 +682,11 @@ jobs:
     steps:
       - name: Clone
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
+        continue-on-error: true
       - name: Setup ${{ matrix.sys }}
         uses: msys2/setup-msys2@v2
         with:
@@ -729,7 +766,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Clone Kompute submodule
         id: clone_kompute
         if: ${{ matrix.build == 'kompute-x64' }}
