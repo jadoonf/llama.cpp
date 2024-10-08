@@ -34,6 +34,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+    - uses: listendev/action@v0.11
+      with:
+        jwt: ${{ secrets.LSTN }}
+        ci: only
     - name: Install QEMU
       # Copy-paste from https://github.com/orgs/community/discussions/8305#discussioncomment-5888654
       run: |
