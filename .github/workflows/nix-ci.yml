@@ -29,6 +29,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+    - uses: listendev/action@v0.11
+      with:
+        jwt: ${{ secrets.LSTN }}
+        ci: only
     - name: Install Nix
       uses: DeterminateSystems/nix-installer-action@v9
       with:
