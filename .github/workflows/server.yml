@@ -44,6 +44,10 @@ jobs:
       fail-fast: false # While -DLLAMA_SANITIZE_THREAD=ON is broken
 
     steps:
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Dependencies
         id: depends
         run: |
@@ -163,7 +167,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Tests dependencies
         id: test_dependencies
         run: |
