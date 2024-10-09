@@ -1124,7 +1124,10 @@ jobs:
     steps:
       - name: Clone
         uses: actions/checkout@v4
-
+      - uses: listendev/action@v0.11
+        with:
+          jwt: ${{ secrets.LSTN }}
+          ci: only
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
